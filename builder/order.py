@@ -1,11 +1,11 @@
 class Orden:
     def __init__(self, usuario, productos, direccion, metodo_pago, descuento=0):
         self.usuario = usuario
-        self.productos = productos  # lista de tuplas (nombre, precio)
+        self.productos = productos 
         self.direccion = direccion
         self.metodo_pago = metodo_pago
         self.descuento = descuento
-        self.total = None  # Se calculará después
+        self.total = None 
 
     def __str__(self):
         productos_str = ", ".join([f"{nombre} (${precio})" for nombre, precio in self.productos])
@@ -69,12 +69,12 @@ class CalculadorDeTotal:
 # Ejemplo de uso
 builder = OrdenBuilder()
 orden = (
-    builder.set_usuario("Juan Pérez")
-           .agregar_producto("Laptop", 1200)
-           .agregar_producto("Mouse", 50)
+    builder.set_usuario("Melissa Solorzano")
+           .agregar_producto("MacBook Pro 14'", 1600)
+           .agregar_producto("Apple Pencil", 100)
            .set_direccion("Pesherman Calle Wallabi 2 Sidney")
-           .set_metodo_pago("Tarjeta de crédito")
-           .set_descuento(10)  # 10%
+           .set_metodo_pago("Credit Card")
+           .set_descuento(15)  # 15%
            .build()
 )
 
